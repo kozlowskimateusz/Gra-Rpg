@@ -12,7 +12,12 @@ AMyPlayerController::AMyPlayerController()
 
 void AMyPlayerController::BeginPlay()
 {
+	Super::BeginPlay();
 
+	if (PlayerHud != nullptr)
+	{
+		ToggleWidget(PlayerHud, true, true, true);
+	}
 }
 
 void AMyPlayerController::SetupInputComponent()
@@ -68,5 +73,34 @@ void AMyPlayerController::ToggleWidget(TSubclassOf<UUserWidget> NewWidgetClass, 
 			SetPause(false);
 			bShowCurrentWidget = false;
 		}
+	}
+}
+
+void AMyPlayerController::ToggleMainMenuWidget()
+{
+	if (MainMenuWidget != nullptr)
+	{
+		ToggleWidget(MainMenuWidget, true, true, false);
+	}
+}
+void AMyPlayerController::ToggleEquipmentWidget()
+{
+	if (EquipmentWidget != nullptr)
+	{
+		ToggleWidget(EquipmentWidget, true, true, false);
+	}
+}
+void AMyPlayerController::ToggleSkillsWidget()
+{
+	if (SkillsWidget != nullptr)
+	{
+		ToggleWidget(SkillsWidget, true, true, false);
+	}
+}
+void AMyPlayerController::ToggleQuestsWidget()
+{
+	if (QuestsWidget != nullptr)
+	{
+		ToggleWidget(QuestsWidget, true, true, false);
 	}
 }

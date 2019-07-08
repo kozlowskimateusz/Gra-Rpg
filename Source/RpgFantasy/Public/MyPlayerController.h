@@ -20,7 +20,7 @@ public:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable, Category = "Toggle Widget")
-		void ToggleWidget(TSubclassOf<UUserWidget>* NewWidgetClass);
+		void ToggleWidget(TSubclassOf<UUserWidget> NewWidgetClass, bool bShowMouseCursor, bool bSetPause, bool bInputModeGameOnly);
 
 protected:
 
@@ -29,22 +29,22 @@ protected:
 	virtual void SetupInputComponent() override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widgets")
-	TSubclassOf<UUserWidget>* PlayerHud;
+	TSubclassOf<UUserWidget> PlayerHud;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widgets")
-	TSubclassOf<UUserWidget>* PlayerHud;
+	TSubclassOf<UUserWidget> MainMenuWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widgets")
-	TSubclassOf<UUserWidget>* PlayerHud;
+	TSubclassOf<UUserWidget> EquipmentWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widgets")
-	TSubclassOf<UUserWidget>* PlayerHud;
+	TSubclassOf<UUserWidget> SkillsWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widgets")
-	TSubclassOf<UUserWidget>* PlayerHud;
+	TSubclassOf<UUserWidget> MapWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widgets")
-	TSubclassOf<UUserWidget>* PlayerHud;
+	TSubclassOf<UUserWidget> QuestsWidget;
 
 	UPROPERTY()
 	UUserWidget* CurrentWidget;
