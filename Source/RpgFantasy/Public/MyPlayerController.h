@@ -20,7 +20,7 @@ public:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable, Category = "Toggle Widget")
-		void ToggleWidget(TSubclassOf<UUserWidget> NewWidgetClass, bool bShowMouseCursor, bool bSetPause, bool bInputModeGameOnly);
+		void ToggleWidget(TSubclassOf<UUserWidget> NewWidgetClass, bool bShowMouse, bool bSetPause, bool bInputModeGameOnly);
 
 protected:
 

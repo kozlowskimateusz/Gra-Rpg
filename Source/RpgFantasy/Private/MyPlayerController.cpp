@@ -16,7 +16,7 @@ void AMyPlayerController::BeginPlay()
 
 	if (PlayerHud != nullptr)
 	{
-		ToggleWidget(PlayerHud, true, true, true);
+		ToggleWidget(PlayerHud, false, false, true);
 	}
 }
 
@@ -37,7 +37,7 @@ void AMyPlayerController::SetupInputComponent()
 	InputComponent->BindAction("Quests", IE_Pressed, this, &AMyPlayerController::ToggleQuestsWidget);
 }
 
-void AMyPlayerController::ToggleWidget(TSubclassOf<UUserWidget> NewWidgetClass, bool bShowMouseCursor, bool bSetPause, bool BInputModeGameOnly)
+void AMyPlayerController::ToggleWidget(TSubclassOf<UUserWidget> NewWidgetClass, bool bShowMouse, bool bSetPause, bool BInputModeGameOnly)
 {
 	if (CurrentWidget != nullptr)
 	{
@@ -60,7 +60,7 @@ void AMyPlayerController::ToggleWidget(TSubclassOf<UUserWidget> NewWidgetClass, 
 			{
 				SetInputMode(FInputModeGameAndUI());
 			}
-			bShowMouseCursor = bShowMouseCursor;
+			bShowMouseCursor = bShowMouse;
 			SetPause(bSetPause);
 			bShowCurrentWidget = true;
 		}
