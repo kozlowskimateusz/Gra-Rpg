@@ -28,7 +28,7 @@ protected:
 
 	virtual void SetupInputComponent() override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widgets")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
 	TSubclassOf<UUserWidget> PlayerHud;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widgets")
